@@ -1,0 +1,19 @@
+Daily and Sports Activities Classification (9120 samples, 5625 features) 
+
+Download from http://archive.ics.uci.edu/ml/datasets/Daily+and+Sports+Activities
+
+This dataset represents a collection of data related to sports and other activities. The major challenge in this dataset is feature selection as there are 5625 features and so the feature selection challenge here is a big.
+
+To solve the feature selection you can use feature selections methods (from Weka, R, or Python) but you may also need to look at creative ways of reducing the number of features by using methods such as aggregating feature categories into a single feature by using their arithmetic average (or some other statistical summary measure) taken over the category.
+
+Feature selection is critical in this dataset as your computer could run out of memory and/or your execution time could be very long unless the number of features is reduced to a manageable number.
+
+This is a classification problem with 19 classes, denoting the number of activities. The data is organized into a hierarchy and some scripts in R or Python or some other language will be required to flatten the data so that it can be represented into a single file. 
+
+The hierarchy is as follows. Each of the 19 activities is performed by 8 subjects (4 males and 4 females) for 5 minutes.
+
+Readings are taken from sensors attached to the body of the subject at a sampling rate of 25 Hz, which means that 125 readings are taken from each subject in the trial. Each subject trains in 60 different segments (at different times of the day).
+
+Thus the total number of samples is 19*8*60=9120. The total number of features is 5*25*45=5625 as there are 9 sensors worn by each subject and each sensor produces 5 different measurements.
+
+More details of the dataset and the data is available at the url given above. 

@@ -1,0 +1,30 @@
+The first challenge is to create one single file out of the 9120 files available.
+
+A code that would loop through each of the 60 files for one person was written.
+
+Simply collecting all this data for one person would yield 125x60 which is 7500 rows
+for one person. 
+
+Number of tuples for all the people for one activity would then be 7500x8
+which is 60,000 rows. 
+
+If in the same way, data for all the activities were to be collected, the
+size of the data set would be 60,000x19 which is 1,140,000 rows. 
+
+This kind of data would be a lot to process and fetch. Hence, aggregation was performed to reduce the data size. 
+
+For each segment, another loop was written that did an average of the 125 values while fetching them.
+
+So essentially, we clubbed 125 rows into just one for each segment which resulted in just 60 rows per person per activity. 
+The size of the aggregated data now was just 60x8x19 which is 9120 and this was considerably smaller than the original file.
+The code for this can be found in the "pre_processing.py" file
+
+This data firstly took a lot less time to fetch in python and secondly, reduced the model building times in WEKA. After
+this, a function was written which added the 45 attributes as column headers for the aggregated data. This was done to ensure that attribute selection
+can be carried out in WEKA. The code for this is in the "header_and_activity_names.py" file
+
+First run the "pre_processing.py" after replacing the data path to where you have saved the "data" folder in your machine. This will 
+output a text file. Open it in excel and check if the number of rows/columns are correct. Then save this as a csv.
+Then run the "header_and_activity_names.py" to generate header and actvity names. Sample file after both transformations is given (final_sample.csv)
+
+You need to convert this to an arff file to feed into W.E.K.A and carry out feature selection. 
